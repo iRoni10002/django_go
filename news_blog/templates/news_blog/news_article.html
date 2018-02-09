@@ -6,7 +6,15 @@
     <div class="row">
         <div class="col-sm">
             <h3>{{ article.title }}</h3>
-            <p>{{ article.text }}</p>
+            <h4>{{ article.author.name}}</h4>
+            <font color="red"><p>{{ article.text }}</p></font>
+            {% for comment in comment %}
+                <div class="row">
+                    <div class="col-sm">
+                        <h4>{{ comment.text }}</h4>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
     </div>
 {% endblock %}

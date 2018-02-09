@@ -30,4 +30,11 @@ class Article(models.Model):
     def __str__(self):
         return '{} {}'. format(self.title, self.created_date)
 
+class Comment(models.Model):
+    author = models.ForeignKey(Author, on_delete=models.CASCADE)
+    article = models.ForeignKey(Article, on_delete=models.CASCADE)
+    text = models.TextField(max_length=250)
+    published_date = models.DateTimeField(
+        blank=True, null=True)
+
 # Create your models here.
