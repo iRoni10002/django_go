@@ -3,6 +3,23 @@
 {% block title %}My amazing news blog{% endblock %}
 
 {% block content %}
+
+    <div >
+       <div class="col-sm">
+           <a href="{% url 'new_article' %}" class="top-menu">
+               Add news&nbsp;<span class="glyphicons glyphicons-plus"></span>
+           </a>
+       </div>
+    </div>
+
+    <div >
+       <div class="col-sm">
+           <a href="{% url 'new_comment' %}" class="top-menu">
+               Add comment for news&nbsp;<span class="glyphicons glyphicons-plus"></span>
+           </a>
+       </div>
+    </div>
+
     {% if articles %}
         {% for article in articles %}
             <div class="row">
