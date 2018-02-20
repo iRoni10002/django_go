@@ -66,7 +66,7 @@ def new_comment(request, article_id):
            comment = form.save(commit=False)
            comment.published_date = timezone.now()
            comment.save()
-           return redirect('comment', article_id = Article.objects.get(id = article_id))
+           return redirect('comment', comment=comment.pk)
    else:
        form = CommentForm()
    return render(request, 'news_blog/edit_comment.html', {'form': form})
